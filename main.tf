@@ -15,7 +15,29 @@ provider "azurerm" {
   tenant_id       = "eac6c7bf-5c15-44bb-aec8-7a9c752e9876"
 }
 
-resource "azurerm_resource_group" "rg" {
-  name = "test_resource_group_name"
+resource "azurerm_resource_group" "myresourcegroup" {
+  name = "myResourceGroup"
   location = "West Europe"
+
+  tags = {
+    environment = "Terraform Demo"
+  }
+}
+
+resource "azurerm_virtual_network" "myterraformnetwork" {
+    name                = "myVnet"
+    address_space       = ["10.0.0.0/16"]
+    location            = "West Europe"
+    resource_group_name = azurerm_resource_group.myresourcegroup.name
+
+    tags = {
+        environment = "Terraform Demo"
+    }
+}
+
+resource "azurerm_subnet" "myterraformsubnet" {
+    name                 = "mySubnet"
+    resource_group_name  = azurerm_resource_group.myresourcegroup.name
+    virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
+    address_prefixes       = ["10.0.2.0/24"]
 }
