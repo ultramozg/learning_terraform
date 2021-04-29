@@ -18,7 +18,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "myresourcegroup" {
   name = "myResourceGroup"
-  location = "West Europe"
+  location = var.location
 
   tags = {
     environment = "Terraform Demo"
@@ -28,7 +28,7 @@ resource "azurerm_resource_group" "myresourcegroup" {
 resource "azurerm_virtual_network" "myterraformnetwork" {
     name                = "myVnet"
     address_space       = ["10.0.0.0/16"]
-    location            = "West Europe"
+    location            = var.location
     resource_group_name = azurerm_resource_group.myresourcegroup.name
 
     tags = {
@@ -45,7 +45,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
 
 resource "azurerm_public_ip" "myterraformpublicip" {
     name                         = "myPublicIP"
-    location                     = "Wast Europe"
+    location                     = var.location
     resource_group_name          = azurerm_resource_group.myresourcegroup.name
     allocation_method            = "Dynamic"
 
@@ -56,7 +56,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
 
 resource "azurerm_network_security_group" "myterraformnsg" {
     name                = "myNetworkSecurityGroup"
-    location            = "Wast Europe"
+    location            = var.location
     resource_group_name = azurerm_resource_group.myresourcegroup.name
 
     security_rule {
@@ -78,7 +78,7 @@ resource "azurerm_network_security_group" "myterraformnsg" {
 
 resource "azurerm_network_interface" "myterraformnic" {
     name                        = "myNIC"
-    location                    = "eastus"
+    location                    = var.location
     resource_group_name         = azurerm_resource_group.myresourcegroup.name
 
     ip_configuration {
@@ -102,13 +102,13 @@ resource "azurerm_network_interface_security_group_association" "example" {
 resource "azurerm_ssh_public_key" "mysshpubkey" {
   name                = "mysshpubkey"
   resource_group_name = azurerm_resource_group.myresourcegroup.name
-  location            = "West Europe"
+  location            = var.location
   public_key          = file("~/.ssh/id_rsa.pub")
 }
 
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
-    location              = "West Europe"
+    location              = var.location
     resource_group_name   = azurerm_resource_group.myresourcegroup.name
     network_interface_ids = [azurerm_network_interface.myterraformnic.id]
     size                  = "Standard_DS1_v2"
