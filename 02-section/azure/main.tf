@@ -12,8 +12,16 @@ provider "azurerm" {
 
   subscription_id = "02b20795-af5d-43bf-b6b6-e9f4e231a788"
   client_id       = "c3efce2e-281e-49a1-a37c-4a73b53086d0"
-  client_secret   = var.client_secret
   tenant_id       = "eac6c7bf-5c15-44bb-aec8-7a9c752e9876"
+}
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "cloud-shell-storage-westeurope"
+    storage_account_name = "terraformstoragebucket"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
+  }
 }
 
 resource "azurerm_resource_group" "myresourcegroup" {
@@ -67,6 +75,18 @@ resource "azurerm_network_security_group" "myterraformnsg" {
         protocol                   = "Tcp"
         source_port_range          = "*"
         destination_port_range     = "22"
+        source_address_prefix      = "*"
+        destination_address_prefix = "*"
+    }
+
+    security_rule {
+        name                       = "http-alt"
+        priority                   = 1010
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "8080"
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
@@ -134,6 +154,8 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         username       = "azureuser"
         public_key     = azurerm_ssh_public_key.mysshpubkey.public_key
     }
+
+    custom_data = filebase64("bootstrap.sh")
 
     /*
     boot_diagnostics {
