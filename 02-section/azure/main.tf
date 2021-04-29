@@ -7,14 +7,6 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  features {}
-
-  subscription_id = var.credentials["subscription_id"]
-  client_id       = var.credentials["client_id"]
-  tenant_id       = var.credentials["tenant_id"]
-}
-
 terraform {
   backend "azurerm" {
     resource_group_name  = "cloud-shell-storage-westeurope"
