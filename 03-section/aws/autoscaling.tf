@@ -8,7 +8,7 @@ resource "aws_launch_template" "example" {
     subnet_id = aws_subnet.main-public.id
 
     # the security group
-    security_groups = [aws_security_group.allow-ssh.id, aws_security_group.allow-http-alt.id]
+    security_groups = [aws_security_group.allow-ssh.id, aws_security_group.allow-http.id]
   }
 
   # the public SSH key
