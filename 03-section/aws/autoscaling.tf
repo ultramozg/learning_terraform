@@ -25,7 +25,6 @@ resource "aws_launch_template" "example" {
 resource "aws_autoscaling_group" "example-autoscaling" {
   name                      = "example-autoscaling"
   # TODO hardcoded , to do need to coollect all availability zones withing this region and get one of them
-  availability_zones = ["eu-west-1a"]
   availability_zones        = ["eu-west-1a"]
   min_size                  = 2
   max_size                  = 2
