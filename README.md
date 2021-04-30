@@ -12,3 +12,18 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
  - Add LB 
  - Add autoscaling group
  - Remove public ip's from instances, the application in our case it's nginx can be only reached via `elb`
+
+
+##### TIPS
+
+To run terraform within `AWS` cloud provider, use something like this
+
+```bash
+AWS_ACCESS_KEY_ID=<access_key> AWS_SECRET_ACCESS_KEY=<secret_key> terraform destroy
+```
+
+in `azure`
+
+```bash
+ARM_ACCESS_KEY=<acces_key> ARM_CLIENT_SECRET=<client_secret> terraform plan
+```
