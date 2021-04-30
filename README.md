@@ -14,7 +14,7 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
  - Remove public ip's from instances, the application in our case it's nginx can be only reached via `elb`
 
 
-##### TIPS
+#### TIPS
 
 To run terraform within `AWS` cloud provider, use something like this
 
