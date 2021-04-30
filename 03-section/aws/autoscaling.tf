@@ -32,6 +32,11 @@ resource "aws_autoscaling_group" "example-autoscaling" {
   health_check_type         = "ELB"
   load_balancers            = [aws_elb.my-elb.name]
 
+  launch_template {
+    id      = aws_launch_template.example.id
+    version = "$Latest"
+  }
+
   tag {
     key                 = "Name"
     value               = "ec2 instance"
