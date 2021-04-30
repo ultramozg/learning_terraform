@@ -5,7 +5,7 @@ resource "aws_launch_template" "example" {
 
   network_interfaces {
     # the VPC subnet
-    subnet_id = aws_subnet.main-public.id
+    subnet_id = aws_subnet.main-private.id
 
     # the security group
     security_groups = [aws_security_group.allow-ssh.id, aws_security_group.allow-http.id]
