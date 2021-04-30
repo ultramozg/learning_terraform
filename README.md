@@ -11,3 +11,4 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
  - As you already know the same virtual machines imagees on the different availability zones have different `AMI`, so to negeciate this problem we should query the `AWS` or `AZURE` API to get correct id of thoose images.
  - Add LB 
  - Add autoscaling group
+ - Remove public ip's from instances, the application in our case it's nginx can be only reached via `elb`
