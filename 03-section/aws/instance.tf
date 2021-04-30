@@ -1,5 +1,5 @@
 resource "aws_instance" "example" {
-  ami           = var.AMIS[var.AWS_REGION]
+  ami = element(data.aws_ami_ids.ubuntu.ids, 0)
   instance_type = "t2.micro"
 
   # the VPC subnet
