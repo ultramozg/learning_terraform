@@ -3,7 +3,7 @@ resource "aws_elb" "my-elb" {
   subnets         = [aws_subnet.main-public.id]
   security_groups = [aws_security_group.elb-securitygroup.id]
   listener {
-    instance_port     = 8080
+    instance_port     = 80
     instance_protocol = "http"
     lb_port           = 80
     lb_protocol       = "http"
@@ -12,7 +12,7 @@ resource "aws_elb" "my-elb" {
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 3
-    target              = "HTTP:8080/"
+    target              = "HTTP:80/"
     interval            = 30
   }
 
