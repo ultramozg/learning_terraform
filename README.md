@@ -14,7 +14,7 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
  - Remove public ip's from instances, the application in our case it's nginx can be only reached via `elb`
  - instances in local subnet can reach the internet via `nat-gw` 
 
- Usefull article to do this [link](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html)
+ Usefull article to do this [link](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html), [link2](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html)
 
 
 #### TIPS
