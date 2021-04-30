@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#frite multiline to file 
 cat <<EOF >> webserver.py
 import http.server
 import socketserver
