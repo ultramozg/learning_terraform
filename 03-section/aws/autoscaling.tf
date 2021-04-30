@@ -17,6 +17,14 @@ resource "aws_launch_template" "example" {
   # the user data which server should run
   user_data = filebase64("user_data.sh")
 
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Role = "backend"
+    }
+  }
+
   lifecycle {
     create_before_destroy = true
   }
