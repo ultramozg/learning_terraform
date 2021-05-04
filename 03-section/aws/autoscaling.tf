@@ -36,7 +36,7 @@ resource "aws_autoscaling_group" "example-autoscaling" {
   availability_zones        = ["eu-west-1a"]
   min_size                  = 2
   max_size                  = 2
-  health_check_grace_period = 300
+  health_check_grace_period = 500
   health_check_type         = "ELB"
   load_balancers            = [aws_elb.my-elb.name]
 
