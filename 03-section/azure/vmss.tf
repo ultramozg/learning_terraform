@@ -109,12 +109,15 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
  os_profile {
    computer_name_prefix = "vmlab"
    admin_username       = var.admin_user
-   admin_password       = var.admin_password
    custom_data          = file("cloud-init.conf")
  }
 
  os_profile_linux_config {
-   disable_password_authentication = false
+   disable_password_authentication = true
+   ssh_keys {
+     path           = "/home/${var.admin_user}/.ssh/authorized_keys"
+     key_data       = file(var.pub_key)
+   }
  }
 
  network_profile {

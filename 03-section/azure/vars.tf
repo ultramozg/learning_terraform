@@ -35,6 +35,6 @@ variable "admin_user" {
    default     = "azureuser"
 }
 
-variable "admin_password" {
-   description = "Default password for admin account"
+variable "pub_key" {
+  default = "~/.ssh/id_rsa.pub"
 }
