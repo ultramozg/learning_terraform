@@ -12,6 +12,6 @@ terraform {
     resource_group_name  = "cloud-shell-storage-westeurope"
     storage_account_name = "terraformstoragebucket"
     container_name       = "tfstate"
-    key                  = "staging.terraform.tfstate"
+    key                  = "prod.terraform.tfstate"
   }
 }
