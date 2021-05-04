@@ -110,7 +110,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
    computer_name_prefix = "vmlab"
    admin_username       = var.admin_user
    admin_password       = var.admin_password
-   custom_data          = file("web.conf")
+   custom_data          = file("cloud-init.conf")
  }
 
  os_profile_linux_config {
