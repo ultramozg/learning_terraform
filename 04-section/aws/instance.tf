@@ -12,7 +12,7 @@ resource "aws_instance" "example" {
   key_name = aws_key_pair.mykeypair.key_name
   
   tags = {
-    Role = "test-codedeploy"
+    Name = "CodeDeployDemo"
   }
 }
 
