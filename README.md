@@ -32,3 +32,11 @@ in `azure`
 ```bash
 ARM_ACCESS_KEY=<acces_key> ARM_CLIENT_SECRET=<client_secret> terraform plan
 ```
+
+To install `aws codedeploy` use something like this
+
+```bash
+wget https://aws-codedeploy-us-east-2.s3.us-east-2.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+```
