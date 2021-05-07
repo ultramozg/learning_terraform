@@ -36,7 +36,11 @@ ARM_ACCESS_KEY=<acces_key> ARM_CLIENT_SECRET=<client_secret> terraform plan
 To install `aws codedeploy` use something like this
 
 ```bash
+sudo apt install ruby wget -y
+cd /home/ubuntu
+
 wget https://aws-codedeploy-us-east-2.s3.us-east-2.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
+sudo service codedeploy-agent start
 ```
