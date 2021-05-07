@@ -17,7 +17,7 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
  Usefull article to do this [link](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html), [link2](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html)
 
 #### 04 section
- - The 4th section covers `AWS codedeploy` and how it's works
+ - The 4th section covers `AWS codedeploy` and how it's works, here link to the [tutorial](https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-wordpress-launch-instance.html)
 
 #### TIPS
 
