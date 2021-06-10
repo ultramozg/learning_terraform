@@ -19,6 +19,9 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
 #### 04 section
  - The 4th section covers `AWS codedeploy` and how it's works, here link to the [tutorial](https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-wordpress-launch-instance.html)
 
+#### 05 section
+ - The 5th section coverts how to provision a k8s cluster iniside Azure
+
 #### TIPS
 
 To run terraform within `AWS` cloud provider, use something like this
