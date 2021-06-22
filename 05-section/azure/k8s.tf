@@ -14,6 +14,11 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     type = "SystemAssigned"
   }
 
+  network_profile {
+    network_plugin = "azure"
+    load_balancer_sku = "standart"
+  }
+
   tags = {
     Environment = var.environment
   }
