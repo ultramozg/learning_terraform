@@ -7,6 +7,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   default_node_pool {
     name       = "default"
     node_count = 1
+    availability_zones = [1 ,2, 3]
     vm_size    = "Standard_B2ms"
   }
 
