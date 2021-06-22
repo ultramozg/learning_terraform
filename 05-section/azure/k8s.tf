@@ -9,6 +9,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     node_count = 1
     availability_zones = [1 ,2, 3]
     vm_size    = "Standard_B2ms"
+    vnet_subnet_id = azurerm_subnet.frontend.id
   }
 
   identity {
@@ -20,7 +21,6 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     load_balancer_sku = "standart"
   }
 
-  vnet_subnet_id = frontend.id
 
   tags = {
     Environment = var.environment

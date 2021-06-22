@@ -2,8 +2,8 @@
 
 resource "azurerm_virtual_network" "frontend" {
   name                = "frontend"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
   address_space       = ["172.16.0.0/16"]
   dns_servers         = ["172.16.0.4", "172.16.0.5"]
 
