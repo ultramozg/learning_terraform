@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
-  name                = "dev-aks1"
+  name                = var.k8s_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   dns_prefix          = "devaks1"
@@ -24,6 +24,6 @@ resource "azurerm_kubernetes_cluster" "example" {
   }
 
   tags = {
-    Environment = "dev"
+    Environment = var.environment
   }
 }

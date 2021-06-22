@@ -9,3 +9,7 @@ variable location {
 variable environment {
   default = "test"
 }
+
+variable k8s_name {
+  default = "ssh-aks-test"
+}
