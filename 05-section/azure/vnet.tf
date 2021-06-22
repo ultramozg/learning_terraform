@@ -7,10 +7,12 @@ resource "azurerm_virtual_network" "example" {
   address_space       = ["172.16.0.0/16"]
   dns_servers         = ["172.16.0.4", "172.16.0.5"]
 
+  /*
   ddos_protection_plan {
     id     = azurerm_network_ddos_protection_plan.example.id
     enable = true
   }
+  */
 
   subnet {
     name           = "frontend"
