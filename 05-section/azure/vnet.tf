@@ -1,3 +1,5 @@
+//TODO there should be a security group for simplicity sake it was removed
+
 resource "azurerm_virtual_network" "example" {
   name                = "virtualNetwork1"
   location            = azurerm_resource_group.example.location
