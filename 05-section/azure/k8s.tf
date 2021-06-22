@@ -20,6 +20,8 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     load_balancer_sku = "standart"
   }
 
+  vnet_subnet_id = frontend.id
+
   tags = {
     Environment = var.environment
   }
