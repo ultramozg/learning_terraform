@@ -7,5 +7,5 @@ variable location {
 }
 
 variable environment {
-    default = "dev"
+  default = "test"
 }
