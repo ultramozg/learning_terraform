@@ -3,7 +3,7 @@ variable resource_group_name {
 }
 
 variable location {
-  default = "ukwest"
+  default = "uksouth"
 }
 
 variable environment {
