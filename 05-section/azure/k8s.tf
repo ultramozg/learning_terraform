@@ -21,7 +21,6 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     load_balancer_sku = "standard"
   }
 
-
   tags = {
     Environment = var.environment
   }
