@@ -21,6 +21,14 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     load_balancer_sku = "standard"
   }
 
+  addon_profile {
+    azure_policy { enabled = false }
+    oms_agent {
+      enabled                    = true
+      log_analytics_workspace_id = azurerm_log_analytics_workspace.insights.id
+    }
+  }
+
   tags = {
     Environment = var.environment
   }

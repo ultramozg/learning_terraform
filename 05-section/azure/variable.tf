@@ -13,3 +13,7 @@ variable environment {
 variable k8s_name {
   default = "ssh-aks-test"
 }
+
+variable logs_analytics_workspace_name {
+  default = ""
+}
