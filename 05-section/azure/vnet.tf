@@ -4,8 +4,7 @@ resource "azurerm_virtual_network" "frontend" {
   name                = "frontend"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  address_space       = ["172.16.0.0/16"]
-  dns_servers         = ["172.16.0.4", "172.16.0.5"]
+  address_space       = ["10.64.0.0/12"]
 
   /*
   ddos_protection_plan {
@@ -23,5 +22,5 @@ resource "azurerm_subnet" "frontend" {
   name                 = "frontend"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.frontend.name
-  address_prefixes     = ["172.16.0.0/16"]
+  address_prefixes     = ["10.64.0.0/16"]
 }
