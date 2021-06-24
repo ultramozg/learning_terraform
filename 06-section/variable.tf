@@ -15,7 +15,7 @@ variable environment {
 }
 
 variable k8s_name {
-  default = "ssh-aks-test"
+  default = "ssh-aks-nonprod"
 }
 
 variable k8s_main_subnet_name {
