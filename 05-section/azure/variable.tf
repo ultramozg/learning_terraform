@@ -15,7 +15,7 @@ variable k8s_name {
 }
 
 variable logs_analytics_workspace_name {
-  default = ""
+  default = "DefaultWorkspace-0a277bdd-294c-4772-b5b0-2e57623e7175-SUK"
 }
 
 variable network_docker_bridge_cidr {
