@@ -22,6 +22,9 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
 #### 05 section
  - The 5th section coverts how to provision a k8s cluster iniside Azure
 
+#### 06 section
+ - The 6th section discover how to user terraform import command, when resources already exists , for example k8s service like AKS :)
+
 #### TIPS
 
 To run terraform within `AWS` cloud provider, use something like this
