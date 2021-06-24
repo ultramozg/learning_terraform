@@ -18,6 +18,10 @@ variable k8s_name {
   default = "ssh-aks-test"
 }
 
+variable k8s_main_subnet_name {
+  default = "default"
+}
+
 variable logs_analytics_workspace_name {
   default = "DefaultWorkspace-0a277bdd-294c-4772-b5b0-2e57623e7175-SUK"
 }
