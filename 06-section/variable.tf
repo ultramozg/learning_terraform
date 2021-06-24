@@ -2,6 +2,10 @@ variable resource_group_name {
   default = "ssh-core-rg"
 }
 
+variable vnet_name {
+  default = "ssh-aks-nonprod-vnet"
+}
+
 variable location {
   default = "uksouth"
 }
