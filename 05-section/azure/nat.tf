@@ -1,3 +1,4 @@
+/*
 resource "azurerm_public_ip" "pubip" {
   name                = "nat-gateway-publicIP"
   location            = azurerm_resource_group.rg.location
@@ -25,3 +26,4 @@ resource "azurerm_subnet_nat_gateway_association" "association" {
   subnet_id      = azurerm_subnet.frontend.id
   nat_gateway_id = azurerm_nat_gateway.nat_gateway.id
 }
+*/
