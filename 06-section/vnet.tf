@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "frontend" {
   address_space       = ["10.64.0.0/12"]
 
   tags = {
-    environment = var.environment
+    environment = var.k8s["environment"]
   }
 }
 

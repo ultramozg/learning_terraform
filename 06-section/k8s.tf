@@ -49,6 +49,6 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   tags = {
-    environment = var.environment
+    environment = var.k8s["environment"]
   }
 }

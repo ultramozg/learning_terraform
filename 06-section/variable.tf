@@ -5,11 +5,8 @@ variable "k8s" {
     rg = "ssh-core-rg"
     dns_prefix = "ssh-aks-nonprod-dns"
     vnet_name = "ssh-aks-nonprod-vnet"
+    environment = "test"
   }
-}
-
-variable "environment" {
-  default = "test"
 }
 
 variable "k8s_name" {
