@@ -16,11 +16,19 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   default_node_pool {
-    name               = "agentpool2"
-    node_count         = 1
-    availability_zones = [1, 2, 3]
-    vm_size            = "Standard_B2ms"
-    vnet_subnet_id     = data.azurerm_subnet.frontend.id
+    name                   = "agentpool2"
+    vnet_subnet_id         = data.azurerm_subnet.frontend.id
+    availability_zones     = [1, 2, 3]
+    enable_auto_scaling    = false
+    enable_host_encryption = false
+    enable_node_public_ip  = false
+    max_pods               = 110
+    node_count             = 1
+    vm_size                = "Standard_B2ms"
+    os_disk_size_gb        = 128
+    os_disk_type           = "Managed"
+    orchestrator_version   = "1.20.5"
+    type                   = "VirtualMachineScaleSets"
   }
 
   identity {
