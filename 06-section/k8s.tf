@@ -35,6 +35,15 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     type = "SystemAssigned"
   }
 
+  network_profile {
+    dns_service_ip     = "10.65.0.10"
+    docker_bridge_cidr = "172.17.0.1/16"
+    load_balancer_sku  = "Standard"
+    network_plugin     = "azure"
+    outbound_type      = "loadBalancer"
+    service_cidr       = "10.65.0.0/16"
+  }
+
   tags = {
     environment = var.environment
   }
