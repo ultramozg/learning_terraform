@@ -36,9 +36,9 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   network_profile {
-    dns_service_ip     = var.k8s["dns_service_ip"]
-    docker_bridge_cidr = var.k8s["docker_bridge_cidr"]
-    service_cidr       = var.k8s["service_cidr"]
+    dns_service_ip     = var.k8s["network_profile"]["dns_service_ip"]
+    docker_bridge_cidr = var.k8s["network_profile"]["docker_bridge_cidr"]
+    service_cidr       = var.k8s["network_profile"]["service_cidr"]
     load_balancer_sku  = "Standard"
     network_plugin     = "azure"
     outbound_type      = "loadBalancer"
