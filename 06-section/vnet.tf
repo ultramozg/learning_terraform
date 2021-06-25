@@ -1,5 +1,3 @@
-//TODO there should be a security group for simplicity sake it was removed
-
 resource "azurerm_virtual_network" "frontend" {
   name                = "${var.k8s["name"]}-vnet"
   location            = data.azurerm_resource_group.rg.location
