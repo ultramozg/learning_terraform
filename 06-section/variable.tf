@@ -1,9 +1,9 @@
 variable "k8s" {
   description = "This variable holds information about the kubernetes configuration"
-  type = map
+  type        = map(any)
   default = {
-    name = "ssh-aks-nonprod"
-    rg = "ssh-core-rg"
+    name        = "ssh-aks-nonprod"
+    rg          = "ssh-core-rg"
     environment = "test"
   }
 }
