@@ -4,11 +4,8 @@ variable "k8s" {
   default = {
     rg = "ssh-core-rg"
     dns_prefix = "ssh-aks-nonprod-dns"
+    vnet_name = "ssh-aks-nonprod-vnet"
   }
-}
-
-variable "vnet_name" {
-  default = "ssh-aks-nonprod-vnet"
 }
 
 variable "location" {
