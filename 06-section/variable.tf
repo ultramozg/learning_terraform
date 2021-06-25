@@ -2,15 +2,12 @@ variable "k8s" {
   description = "This variable holds information about the kubernetes configuration"
   type = map
   default = {
+    name = "ssh-aks-nonprod"
     rg = "ssh-core-rg"
     dns_prefix = "ssh-aks-nonprod-dns"
     vnet_name = "ssh-aks-nonprod-vnet"
     environment = "test"
   }
-}
-
-variable "k8s_name" {
-  default = "ssh-aks-nonprod"
 }
 
 variable "logs_analytics_workspace_name" {

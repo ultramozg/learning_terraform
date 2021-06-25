@@ -1,5 +1,5 @@
 resource "azurerm_kubernetes_cluster" "k8s" {
-  name                = var.k8s_name
+  name                = var.k8s["name"]
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
   dns_prefix          = var.k8s["dns_prefix"]
