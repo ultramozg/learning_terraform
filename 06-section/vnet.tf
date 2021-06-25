@@ -12,7 +12,7 @@ resource "azurerm_virtual_network" "frontend" {
 }
 
 resource "azurerm_subnet" "main" {
-  name                 = var.k8s_main_subnet_name
+  name                 = "default"
   virtual_network_name = azurerm_virtual_network.frontend.name
   resource_group_name  = data.azurerm_resource_group.rg.name
   address_prefixes     = ["10.64.0.0/16"]

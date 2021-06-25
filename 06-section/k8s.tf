@@ -17,7 +17,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   default_node_pool {
     name                   = "agentpool2"
-    vnet_subnet_id         = data.azurerm_subnet.frontend.id
+    vnet_subnet_id         = azurerm_subnet.main.id
     availability_zones     = [1, 2, 3]
     enable_auto_scaling    = false
     enable_host_encryption = false
