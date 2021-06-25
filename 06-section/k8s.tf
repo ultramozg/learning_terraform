@@ -4,6 +4,17 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = data.azurerm_resource_group.rg.name
   dns_prefix          = "ssh-aks-nonprod-dns"
 
+  addon_profile {
+    azure_policy { enabled = false }
+    http_application_routing { enabled = false }
+    ingress_application_gateway { enabled = false }
+
+    oms_agent {
+      enabled                    = true
+      log_analytics_workspace_id = data.azurerm_log_analytics_workspace.insights.id
+    }
+  }
+
   default_node_pool {
     name               = "agentpool2"
     node_count         = 1
