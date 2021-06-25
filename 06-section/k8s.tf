@@ -44,6 +44,10 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     service_cidr       = "10.65.0.0/16"
   }
 
+  role_based_access_control {
+      enabled = true
+  }
+
   tags = {
     environment = var.environment
   }
