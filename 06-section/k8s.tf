@@ -5,11 +5,11 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   dns_prefix          = "ssh-aks-nonprod-dns"
 
   default_node_pool {
-    name       = "agentpool2"
-    node_count = 1
-    availability_zones = [1 ,2, 3]
-    vm_size    = "Standard_B2ms"
-    vnet_subnet_id = data.azurerm_subnet.frontend.id
+    name               = "agentpool2"
+    node_count         = 1
+    availability_zones = [1, 2, 3]
+    vm_size            = "Standard_B2ms"
+    vnet_subnet_id     = data.azurerm_subnet.frontend.id
   }
 
   identity {
