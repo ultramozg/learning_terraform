@@ -3,6 +3,7 @@ variable "k8s" {
   type = map
   default = {
     rg = "ssh-core-rg"
+    dns_prefix = "ssh-aks-nonprod-dns"
   }
 }
 

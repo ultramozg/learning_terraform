@@ -2,7 +2,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   name                = var.k8s_name
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
-  dns_prefix          = "ssh-aks-nonprod-dns"
+  dns_prefix          = var.k8s["dns_prefix"]
 
   addon_profile {
     azure_policy { enabled = false }
