@@ -7,7 +7,7 @@ variable location {
 }
 
 variable environment {
-  default = "test"
+  default = "dev"
 }
 
 variable k8s_name {
