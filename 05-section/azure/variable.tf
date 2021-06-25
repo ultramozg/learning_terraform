@@ -1,5 +1,5 @@
 variable resource_group_name {
-  default = "test-aks-rg"
+  default = "dev-aks-rg"
 }
 
 variable location {
