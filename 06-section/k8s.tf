@@ -36,12 +36,12 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   network_profile {
-    dns_service_ip     = "10.65.0.10"
+    dns_service_ip     = var.k8s["dns_service_ip"]
     docker_bridge_cidr = var.k8s["docker_bridge_cidr"]
+    service_cidr       = var.k8s["service_cidr"]
     load_balancer_sku  = "Standard"
     network_plugin     = "azure"
     outbound_type      = "loadBalancer"
-    service_cidr       = "10.65.0.0/16"
   }
 
   role_based_access_control {

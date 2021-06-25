@@ -6,19 +6,9 @@ variable "k8s" {
     rg          = "ssh-core-rg"
     environment = "test"
     docker_bridge_cidr = "172.17.0.1/16"
+    dns_service_ip = "10.65.0.10"
+    service_cidr = "10.65.0.0/16"
   }
-}
-
-variable "network_docker_bridge_cidr" {
-  default = "172.17.0.1/16"
-}
-
-variable "network_dns_service_ip" {
-  default = "10.65.0.10"
-}
-
-variable "network_service_cidr" {
-  default = "10.65.0.0/16"
 }
 
 variable "logs_analytics_workspace_name" {
