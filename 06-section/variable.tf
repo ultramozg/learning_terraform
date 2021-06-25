@@ -2,12 +2,12 @@ variable "k8s" {
   description = "This variable holds information about the kubernetes configuration"
   type        = map(any)
   default = {
-    name        = "ssh-aks-nonprod"
-    rg          = "ssh-core-rg"
-    environment = "test"
+    name               = "ssh-aks-nonprod"
+    rg                 = "ssh-core-rg"
+    environment        = "test"
     docker_bridge_cidr = "172.17.0.1/16"
-    dns_service_ip = "10.65.0.10"
-    service_cidr = "10.65.0.0/16"
+    dns_service_ip     = "10.65.0.10"
+    service_cidr       = "10.65.0.0/16"
   }
 }
 
