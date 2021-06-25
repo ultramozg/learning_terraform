@@ -4,8 +4,6 @@ variable "k8s" {
   default = {
     name = "ssh-aks-nonprod"
     rg = "ssh-core-rg"
-    dns_prefix = "ssh-aks-nonprod-dns"
-    vnet_name = "ssh-aks-nonprod-vnet"
     environment = "test"
   }
 }
