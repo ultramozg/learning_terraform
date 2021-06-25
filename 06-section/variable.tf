@@ -8,10 +8,6 @@ variable "k8s" {
   }
 }
 
-variable "location" {
-  default = "uksouth"
-}
-
 variable "environment" {
   default = "test"
 }
