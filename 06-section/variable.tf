@@ -1,5 +1,9 @@
-variable "resource_group_name" {
-  default = "ssh-core-rg"
+variable "k8s" {
+  description = "This variable holds information about the kubernetes configuration"
+  type = map
+  default = {
+    rg = "ssh-core-rg"
+  }
 }
 
 variable "vnet_name" {

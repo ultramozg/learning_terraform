@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
+  name = var.k8s["rg"]
 }
 
 data "azurerm_log_analytics_workspace" "insights" {
