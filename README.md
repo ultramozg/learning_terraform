@@ -25,6 +25,9 @@ There nothing special just follows the tutorial [link](https://docs.microsoft.co
 #### 06 section
  - The 6th section discover how to user terraform import command, when resources already exists , for example k8s service like AKS :)
 
+#### 07 section
+ - The 7th section contains examples how to configure and provision `Service Bus Namespace` and queues services.
+
 #### TIPS
 
 To run terraform within `AWS` cloud provider, use something like this
