@@ -27,6 +27,10 @@ variable "service_bus" {
         "param1" = "pampam"
         "param2" = "pampam"
       }
+      second-queue = {
+        "param1" = "pampam"
+        "param2" = "pampam"
+      }
     }
   }
 }
