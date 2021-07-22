@@ -24,12 +24,16 @@ variable "service_bus" {
     name = "test-service-bus-dev"
     queues = {
       fist-queue = {
-        "param1" = "pampam"
-        "param2" = "pampam"
+        max_size = 1024
+        lock_duration = "PT1M"
+        max_delivery_count = 10
+        enable_partitioning = false
       }
       second-queue = {
-        "param1" = "pampam"
-        "param2" = "pampam"
+        max_size = 1024
+        lock_duration = "PT1M"
+        max_delivery_count = 10
+        enable_partitioning = false
       }
     }
   }
