@@ -4,7 +4,7 @@ resource "helm_release" "chaos-mesh" {
   chart            = "chaos-mesh"
   namespace        = "chaos-testing"
   create_namespace = true
-  //version    = "6.0.1"
+  version          = "2.0.0"
   /*
   values = [
     "${file("values.yaml")}"
