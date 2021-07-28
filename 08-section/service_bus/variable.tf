@@ -14,7 +14,7 @@ variable "environment" {
 
 variable "sku" {
   type    = string
-  default = "Standart"
+  default = "Standard"
 }
 
 variable "service_bus" {
