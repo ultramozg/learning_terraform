@@ -14,10 +14,6 @@ variable k8s_name {
   default = "ssh-aks-dev"
 }
 
-variable logs_analytics_workspace_name {
-  default = ""
-}
-
 variable network_docker_bridge_cidr {
   default = "172.17.0.1/16"
 }
