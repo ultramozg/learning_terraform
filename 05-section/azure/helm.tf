@@ -7,8 +7,11 @@ resource "helm_release" "chaos-mesh" {
   create_namespace = true
   version          = each.value.version
 
-  set {
-    name  = "service.type"
-    value = "ClusterIP"
+  dynamic "set" {
+    for_each = each.value.values
+    content {
+      name  = set.value.name
+      value = set.value.value
+    }
   }
 }

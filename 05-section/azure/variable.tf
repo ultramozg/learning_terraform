@@ -41,5 +41,4 @@ variable helm_charts {
       }
     }
   }
-
 }
