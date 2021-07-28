@@ -1,10 +1,11 @@
 resource "helm_release" "chaos-mesh" {
-  name             = "chaos-mesh"
-  repository       = "https://charts.chaos-mesh.org"
-  chart            = "chaos-mesh"
-  namespace        = "chaos-testing"
+  for_each         = var.helm_charts
+  name             = each.key
+  repository       = each.value.repository
+  chart            = each.value.chart
+  namespace        = each.value.namespace
   create_namespace = true
-  version          = "2.0.0"
+  version          = each.value.version
 
   set {
     name  = "service.type"
