@@ -25,3 +25,21 @@ variable network_dns_service_ip {
 variable network_service_cidr {
   default = "10.65.0.0/16"
 }
+
+variable helm_charts {
+  default = {
+    chaos-mesh = {
+      repository = "https://charts.chaos-mesh.org"
+      chart = "chaos-mesh"
+      namespace = "chaos-testing"
+      version = "2.0.0"
+      values = {
+        service_type = {
+          name  = "service.type"
+          value = "ClusterIP"
+        }
+      }
+    }
+  }
+
+}
