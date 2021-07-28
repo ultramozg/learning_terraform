@@ -1,5 +1,5 @@
 module "service_bus" {
-  source      = "service_bus"
+  source      = "./service_bus"
 
   rg_name     = "dev-rg"
   environment = "dev"
