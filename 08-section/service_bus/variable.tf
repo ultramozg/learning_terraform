@@ -8,6 +8,11 @@ variable "location" {
   default = "uksouth"
 }
 
+variable "failover_location" {
+  type = string
+  default = "ukwest"
+}
+
 variable "environment" {
   type    = string
 }
