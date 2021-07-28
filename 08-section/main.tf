@@ -5,7 +5,7 @@ module "service_bus" {
   environment = "dev"
 
   service_bus = {
-    name = "dev-service-bus"
+    name = "ssh-dev-service-bus"
     queues = {
       test-queue = {
         max_size = 1024
