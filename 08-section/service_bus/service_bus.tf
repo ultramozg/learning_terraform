@@ -3,7 +3,7 @@ resource "azurerm_servicebus_namespace" "bus" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = var.geo_recovery.enabled ? "Premium" : var.sku
-  capacity            = var.geo_recovery.enabled ? var.geo_recovery.capacity : ""
+  capacity            = var.geo_recovery.enabled ? var.geo_recovery.capacity : 0
 
   tags = {
     environment = var.environment
@@ -15,7 +15,7 @@ resource "azurerm_servicebus_namespace" "secondary_bus" {
   location            = var.failover_location
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = var.geo_recovery.enabled ? "Premium" : var.sku
-  capacity            = var.geo_recovery.enabled ? var.geo_recovery.capacity : ""
+  capacity            = var.geo_recovery.enabled ? var.geo_recovery.capacity : 0
 
   tags = {
     environment = var.environment
