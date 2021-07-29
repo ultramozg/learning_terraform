@@ -10,7 +10,7 @@ resource "azurerm_servicebus_namespace" "bus" {
   }
 }
 
-resource "azurerm_servicebus_namespace" "secondary-bus" {
+resource "azurerm_servicebus_namespace" "secondary_bus" {
   name                = "${var.service_bus["name"]}-secondary"
   location            = var.failover_location
   resource_group_name = azurerm_resource_group.rg.name
@@ -20,6 +20,14 @@ resource "azurerm_servicebus_namespace" "secondary-bus" {
   tags = {
     environment = var.environment
   }
+
+  count = var.geo_recovery.enabled ? 1 : 0
+}
+
+resource "azurerm_servicebus_namespace_disaster_recovery_config" "geo_recovery" {
+  name                 = "servicebus-alias-name"
+  primary_namespace_id = azurerm_servicebus_namespace.bus.id
+  partner_namespace_id = azurerm_servicebus_namespace.secondary_bus[0].id
 
   count = var.geo_recovery.enabled ? 1 : 0
 }
