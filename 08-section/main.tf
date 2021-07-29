@@ -3,7 +3,12 @@ module "service_bus" {
 
   rg_name     = "dev-rg"
   environment = "dev"
-  enable_failover = true
+
+  geo_recovery = {
+    enabled  = true
+    capacity = 1
+  }
+  sku = "Premium"
 
   service_bus = {
     name = "ssh-dev-service-bus"

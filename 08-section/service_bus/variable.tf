@@ -22,9 +22,15 @@ variable "sku" {
   default = "Standard"
 }
 
-variable "enable_failover" {
-  type = bool
-  default = false
+variable "geo_recovery" {
+  type = object({
+    enabled  = bool
+    capacity = number
+  })
+  default = {
+    enabled  = false
+    capacity = 1
+  }
   description = "If you enable the failover location "
 }
 
