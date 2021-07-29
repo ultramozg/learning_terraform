@@ -8,11 +8,6 @@ variable "location" {
   default = "uksouth"
 }
 
-variable "failover_location" {
-  type = string
-  default = "ukwest"
-}
-
 variable "environment" {
   type    = string
 }
@@ -25,11 +20,13 @@ variable "sku" {
 variable "geo_recovery" {
   type = object({
     enabled  = bool
+    location = string
     capacity = number
   })
   default = {
     enabled  = false
     capacity = 1
+    location = "ukwest"
   }
   description = "If you enable the failover location "
 }

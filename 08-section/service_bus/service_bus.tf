@@ -11,8 +11,8 @@ resource "azurerm_servicebus_namespace" "bus" {
 }
 
 resource "azurerm_servicebus_namespace" "secondary_bus" {
-  name                = "${var.service_bus["name"]}-secondary"
-  location            = var.failover_location
+  name                = "${var.service_bus["name"]}-${var.geo_recovery.location}"
+  location            = var.geo_recovery.location
   resource_group_name = azurerm_resource_group.rg.name
   sku                 = var.geo_recovery.enabled ? "Premium" : var.sku
   capacity            = var.geo_recovery.enabled ? var.geo_recovery.capacity : 0

@@ -10,6 +10,7 @@ module "service_bus" {
     // When we choose the Premium sku plan by default it 1,
     // but we should provide this value anyway.
     capacity = 1
+    location = "ukwest"
   }
 
   service_bus = {
