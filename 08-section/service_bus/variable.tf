@@ -22,6 +22,12 @@ variable "sku" {
   default = "Standard"
 }
 
+variable "enable_failover" {
+  type = bool
+  default = false
+  description = "If you enable the failover location "
+}
+
 variable "service_bus" {
   description = "this variable hold all information about the service bus itself and queues"
   type = object({

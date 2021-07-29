@@ -3,6 +3,7 @@ module "service_bus" {
 
   rg_name     = "dev-rg"
   environment = "dev"
+  enable_failover = true
 
   service_bus = {
     name = "ssh-dev-service-bus"

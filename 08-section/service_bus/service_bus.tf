@@ -9,6 +9,19 @@ resource "azurerm_servicebus_namespace" "bus" {
   }
 }
 
+resource "azurerm_servicebus_namespace" "secondary-bus" {
+  name                = "${var.service_bus["name"]}-secondary"
+  location            = var.failover_location
+  resource_group_name = azurerm_resource_group.rg.name
+  sku                 = var.sku
+
+  tags = {
+    environment = var.environment
+  }
+
+  count = var.enable_failover ? 1 : 0
+}
+
 resource "azurerm_servicebus_queue" "example" {
   for_each = var.service_bus["queues"]
   name                = each.key
