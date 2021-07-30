@@ -16,7 +16,7 @@ module "service_bus" {
   service_bus = {
     name = "ssh-dev-service-bus"
     queues = {
-      test-queue = {
+      test = {
         max_size = 1024
         lock_duration = "PT1M"
         max_delivery_count = 10
