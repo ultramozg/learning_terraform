@@ -25,7 +25,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   addon_profile {
-    azure_policy { enabled = true }
+    azure_policy { enabled = var.azure_policy.enabled }
     oms_agent {
       enabled                    = true
       log_analytics_workspace_id = azurerm_log_analytics_workspace.insights.id

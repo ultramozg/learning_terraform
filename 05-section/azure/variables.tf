@@ -42,3 +42,31 @@ variable helm_charts {
     }
   }
 }
+
+variable azure_policy {
+  type = object({
+    enabled = bool
+    policies = map(object({
+      effect = string #audit|deny|disabled
+      name = string
+      excludedNamespaces = list(string)
+    }))
+  })
+  default = {
+    enabled = true
+    policies = {
+      use_only_internal_lb = {
+        effect = "audit"
+        # This name should be match one of the following pre-defined policies
+        # https://docs.microsoft.com/en-us/azure/aks/policy-reference
+        name = "Kubernetes clusters should use internal load balancers"
+        excludedNamespaces = [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "test"
+        ]
+      }
+    }
+  }
+}
